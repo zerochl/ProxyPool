@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/henson/ProxyPool/models"
 	"github.com/nladuo/go-phantomjs-fetcher"
+	"ProxyPool/models"
 )
 
 // Xici get ip from xicidaili.com

@@ -10,10 +10,23 @@ import (
 type Config struct {
 	Mongo MongoConfig `json:"mongo"`
 	Host  string      `json:"host"`
+	LocalFile LocalFile `json:"localFile"`
+	Sqlite SqliteConfig `json:"sqlite"`
 }
 
 // MongoConfig has config values for Mongo
 type MongoConfig struct {
+	Addr  string `json:"addr"`
+	DB    string `json:"db"`
+	Table string `json:"table"`
+	Event string `json:"event"`
+}
+
+type LocalFile struct {
+	FileName string `json:"fileName"`
+}
+
+type SqliteConfig struct {
 	Addr  string `json:"addr"`
 	DB    string `json:"db"`
 	Table string `json:"table"`

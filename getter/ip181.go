@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/henson/ProxyPool/models"
 	"github.com/parnurzeal/gorequest"
+	"ProxyPool/models"
 )
 
 // IP181 get ip from ip181.com

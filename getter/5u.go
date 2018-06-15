@@ -5,8 +5,8 @@ import (
 	"strconv"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/henson/ProxyPool/models"
 	"github.com/parnurzeal/gorequest"
+	"ProxyPool/models"
 )
 
 // Data5u get ip from data5u.com

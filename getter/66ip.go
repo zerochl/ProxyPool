@@ -4,8 +4,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/henson/ProxyPool/models"
 	"github.com/parnurzeal/gorequest"
+	"ProxyPool/models"
 )
 
 // IP66 get ip from 66ip.cn

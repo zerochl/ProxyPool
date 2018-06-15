@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/henson/ProxyPool/models"
 	"github.com/nladuo/go-phantomjs-fetcher"
+	"ProxyPool/models"
 )
 
 // KDL get ip from kuaidaili.com

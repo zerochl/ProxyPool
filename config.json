@@ -1,8 +1,16 @@
 {
-    "mongo": {
-        "addr": "mongodb://127.0.0.1:27017?maxPoolSize=15",
-        "db": "temp",
-        "table": "pool"
-    },
-    "host": ":8080"
+  "mongo": {
+    "addr": "mongodb://127.0.0.1:27017?maxPoolSize=15",
+    "db": "temp",
+    "table": "pool"
+  },
+  "sqlite": {
+    "addr": "IPProxy",
+    "db": "IPProxy",
+    "table": "ip"
+  },
+  "localFile": {
+    "filename": "ipList"
+  },
+  "host": ":8080"
 }

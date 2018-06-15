@@ -1,21 +1,37 @@
 package main
 
 import (
-	"log"
+	storage "ProxyPool/storage"
+	"ProxyPool/models"
+	"github.com/gogather/com/log"
 	"runtime"
 	"sync"
+	"ProxyPool/api"
 	"time"
-
-	"github.com/henson/ProxyPool/api"
-	"github.com/henson/ProxyPool/getter"
-	"github.com/henson/ProxyPool/models"
-	"github.com/henson/ProxyPool/storage"
+	"ProxyPool/getter"
 )
 
 func main() {
+
+	//conn := storage2.NewSqliteStorage()
+	//newIp := models.NewIP()
+	//newIp.Data = "127.0.0.1"
+	//newIp.Type = "local"
+	////conn.Create(newIp)
+	//
+	//tempIp,_ := conn.GetOne("")
+	//log.Println("count:", conn.Count())
+	////conn.Delete(tempIp)
+	//tempIp.Data = "192.168.1.1"
+	//conn.Update(tempIp)
+	//
+	//ips ,_ := conn.GetAll()
+	//log.Println("all size:", len(ips))
+
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	ipChan := make(chan *models.IP, 2000)
-	conn := storage.NewStorage()
+	//conn := storage.NewStorage()
+	conn := storage.NewSqliteStorage()
 
 	// Start HTTP
 	go func() {

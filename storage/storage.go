@@ -1,10 +1,10 @@
 package storage
 
 import (
-	"github.com/henson/ProxyPool/models"
-	"github.com/henson/ProxyPool/util"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"ProxyPool/util"
+	"ProxyPool/models"
 )
 
 // Config 全局配置文件
@@ -18,6 +18,16 @@ type Storage struct {
 	database string
 	table    string
 	session  *mgo.Session
+}
+
+type StorageAction interface {
+	Create(item interface{})
+	GetOne(value string) (*models.IP, error)
+	Count() int
+	Delete(ip *models.IP) error
+	Update(ip *models.IP) error
+	GetAll() ([]*models.IP, error)
+	FindAll(value string) ([]*models.IP, error)
 }
 
 // NewStorage creates and returns new Storage instance
