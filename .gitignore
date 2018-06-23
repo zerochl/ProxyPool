@@ -2,6 +2,10 @@
 *.o
 *.a
 *.so
+*.iml
+.idea
+.travis.yml
+ProxyPool
 
 # Folders
 _obj

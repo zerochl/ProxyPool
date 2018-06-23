@@ -12,7 +12,7 @@ import (
 // Data5u get ip from data5u.com
 func Data5u() (result []*models.IP) {
 	pollURL := "http://www.data5u.com/free/index.shtml"
-	resp, _, errs := gorequest.New().Get(pollURL).End()
+	resp, _, errs := gorequest.New().Get(pollURL).Set("User-Agent","Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36").End()
 	if errs != nil {
 		log.Println(errs)
 		return
@@ -24,7 +24,8 @@ func Data5u() (result []*models.IP) {
 		log.Println(err.Error())
 		return
 	}
-	doc.Find("body > div.wlist > li:nth-child(2) > ul").Each(func(i int, s *goquery.Selection) {
+	log.Println("result:", doc.Find("body").Text())
+	doc.Find("body > div.wlist > ul > li:nth-child(2) > ul").Each(func(i int, s *goquery.Selection) {
 		node := strconv.Itoa(i + 1)
 		ss := s.Find("ul:nth-child(" + node + ") > span:nth-child(1) > li").Text()
 		sss := s.Find("ul:nth-child(" + node + ") > span:nth-child(2) > li").Text()
